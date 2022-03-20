@@ -1,0 +1,14 @@
+<ion-item>
+  <ion-avatar slot="start">
+    <ion-img [src]="movie.imageUrl"></ion-img>
+  </ion-avatar>
+
+  <ion-label text-wrap>
+    <h3>{{movie.name}}</h3>
+    {{movie.rating}}/10
+  </ion-label>
+
+  <ion-icon slot="end" name="videocam"></ion-icon>
+  <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+
+</ion-item>

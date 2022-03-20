@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/movies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>movie-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card class="ion-padding ion-text-center">
+    <img [src]="movie.imageUrl" offset="4"/>
+    <ion-card-header>
+      <ion-card-title>{{movie.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <text>Rating: </text>{{movie.rating}}/10
+    </ion-card-content>
+    <ion-card-content>
+      <text>Comment: </text><br />
+      {{movie.comment}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

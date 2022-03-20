@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title class="ion-text-center">movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-movie-element *ngFor="let movie of movies" [movie]="movie" [routerLink]="movie.id"></app-movie-element>
+  </ion-list>
+</ion-content>
