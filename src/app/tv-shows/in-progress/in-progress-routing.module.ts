@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: InProgressPage
+  },
+  {
+    path: ':inprogressId',
+    loadChildren: () => import('./in-progress-details/in-progress-details.module').then( m => m.InProgressDetailsPageModule)
   }
+
 ];
 
 @NgModule({

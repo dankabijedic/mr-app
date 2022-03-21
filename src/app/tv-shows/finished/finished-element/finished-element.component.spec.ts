@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TvShowElementComponent } from './tv-show-element.component';
+import { FinishedElementComponent } from './finished-element.component';
 
-describe('TvShowElementComponent', () => {
-  let component: TvShowElementComponent;
-  let fixture: ComponentFixture<TvShowElementComponent>;
+describe('FinishedElementComponent', () => {
+  let component: FinishedElementComponent;
+  let fixture: ComponentFixture<FinishedElementComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TvShowElementComponent ],
+      declarations: [ FinishedElementComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TvShowElementComponent);
+    fixture = TestBed.createComponent(FinishedElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

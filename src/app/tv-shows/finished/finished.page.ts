@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Finished } from './finished.model';
+import { FinishedService } from './finished.service';
 
 @Component({
   selector: 'app-finished',
   templateUrl: './finished.page.html',
   styleUrls: ['./finished.page.scss'],
 })
-export class FinishedPage implements OnInit {
+export class FinishedPage {
 
-  constructor(private menuCtrl: MenuController) {
+  finished: Finished[];
+
+  constructor(private menuCtrl: MenuController, private finishedService: FinishedService) {
     console.log('constructor');
+    this.finished = this.finishedService.finished
   }
 
   openMenu() {

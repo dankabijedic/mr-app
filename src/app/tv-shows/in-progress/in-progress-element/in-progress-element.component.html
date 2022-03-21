@@ -1,0 +1,14 @@
+<ion-item>
+  <ion-avatar slot="start">
+    <ion-img [src]="inprogress.imageUrl"></ion-img>
+  </ion-avatar>
+
+  <ion-label text-wrap>
+    <h3>{{inprogress.name}}</h3>
+  </ion-label>
+
+  <ion-icon slot="end" name="tv"></ion-icon>
+  <ion-button (click)="onDoneClick()" size-sm="small">
+    Done
+  </ion-button>
+</ion-item>

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: FinishedPage
+  },
+  {
+    path: ':finishedId',
+    loadChildren: () => import('./finished-details/finished-details.module').then( m => m.FinishedDetailsPageModule)
   }
 ];
 

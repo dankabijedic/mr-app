@@ -5,3 +5,9 @@
     </ion-button>
     <ion-title class="ion-text-center">Finished</ion-title>
   </ion-toolbar>
+
+  <ion-content>
+    <ion-list>
+      <app-finished-element *ngFor="let finished of finished" [finished]="finished" [routerLink]="finished.id"></app-finished-element>
+    </ion-list>
+  </ion-content>

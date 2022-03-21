@@ -6,3 +6,8 @@
     <ion-title class="ion-text-center">In progress</ion-title>
   </ion-toolbar>
 
+  <ion-content>
+    <ion-list>
+      <app-in-progress-element *ngFor="let inprogress of inprogresses" [inprogress]="inprogress" [routerLink]="inprogress.id"></app-in-progress-element>
+    </ion-list>
+  </ion-content>

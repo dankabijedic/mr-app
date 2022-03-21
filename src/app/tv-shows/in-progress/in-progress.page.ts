@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { InProgress } from './in-progress.model';
+import { InProgressService } from './in-progress.service';
 
 @Component({
   selector: 'app-in-progress',
@@ -8,8 +10,11 @@ import { MenuController } from '@ionic/angular';
 })
 export class InProgressPage {
 
-  constructor(private menuCtrl: MenuController) {
+  inprogresses: InProgress[];
+
+  constructor(private menuCtrl: MenuController, private inprogressService: InProgressService) {
     console.log('constructor');
+    this.inprogresses = this.inprogressService.inprogress
   }
 
   openMenu() {
