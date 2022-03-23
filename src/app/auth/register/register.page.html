@@ -5,42 +5,58 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Surname</ion-label>
-          <ion-input typeof="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+  <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)" >
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" ngModel name="text" required></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Surname</ion-label>
+            <ion-input typeof="text" ngModel name="text" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input typeof="password"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" ngModel name="email" email required #email="ngModel"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size-sm="6" offset-sm="3">
-        <ion-button typeof="submit" color="primary" shape="round" expand="block">Register</ion-button>
-      </ion-col>
-    </ion-row>
+      <ion-row lines="none" *ngIf="email.invalid && email.touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Please enter a valid email address!</p>
+        </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input typeof="password" ngModel name="password" required minLength="7" #password="ngModel"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-  </ion-grid>
+      <ion-row lines="none" *ngIf="password.invalid && password.touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Password should be minimum 7 characters long!</p>
+        </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button typeof="submit" color="primary" shape="round" expand="block" [disabled]="registerForm.invalid">Register</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

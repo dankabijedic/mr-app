@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
 import { Book } from './book.model';
+import { BooksModalComponent } from './books-modal/books-modal.component';
 import { BooksService } from './books.service';
 
 @Component({
@@ -15,13 +16,27 @@ export class BooksPage implements OnInit {
   ];*/
   books: Book[];
 
-  constructor(private menuCtrl: MenuController, private booksService: BooksService) {
+  constructor(private menuCtrl: MenuController, private booksService: BooksService, private modalCtrl: ModalController) {
     console.log('constructor');
     this.books = this.booksService.books;
   }
 
   openMenu() {
     this.menuCtrl.open();
+  }
+
+  openModal() {
+    this.modalCtrl.create({
+      component: BooksModalComponent,
+      componentProps: {title: 'Add a book'}
+    }).then((modal: HTMLIonModalElement) => {
+      modal.present();
+      return modal.onDidDismiss();
+    }).then((resultData) => {
+      if (resultData.role === 'confirm') {
+        console.log(resultData);
+      }
+    });
   }
 
   ngOnInit() {

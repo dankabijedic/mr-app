@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
 import { Movie } from './movie.model';
+import { MoviesModalComponent } from './movies-modal/movies-modal.component';
 import { MoviesService } from './movies.service';
 
 @Component({
@@ -16,13 +17,27 @@ export class MoviesPage implements OnInit {
 
   movies: Movie[];
 
-  constructor(private menuCtrl: MenuController, private moviesService: MoviesService) {
+  constructor(private menuCtrl: MenuController, private moviesService: MoviesService, private modalCtrl: ModalController) {
     console.log('constructor');
     this.movies = this.moviesService.movies
   }
 
   openMenu() {
     this.menuCtrl.open();
+  }
+
+  openModal() {
+    this.modalCtrl.create({
+      component: MoviesModalComponent,
+      componentProps: { title: 'Add a movie'}
+    }).then((modal: HTMLIonModalElement) => {
+      modal.present();
+      return modal.onDidDismiss();
+    }).then((resultData) => {
+      if (resultData.role === 'confirm') {
+        console.log(resultData);
+      }
+    })
   }
 
   ngOnInit() {

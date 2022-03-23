@@ -3,7 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\homepage"
+    "\\src\\app\\movies",
+    "\\src\\app\\movies\\movies-modal",
+    "\\src\\app\\tv-shows",
+    "\\src\\app\\tv-shows\\finished",
+    "\\src\\app\\tv-shows\\in-progress",
+    "\\src\\app\\tv-shows\\in-progress\\in-progress-modal"
   ],
+  "SelectedNode": "\\src\\app\\movies\\movies-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }

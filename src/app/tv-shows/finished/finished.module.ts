@@ -8,6 +8,7 @@ import { FinishedPageRoutingModule } from './finished-routing.module';
 
 import { FinishedPage } from './finished.page';
 import { FinishedElementComponent } from './finished-element/finished-element.component';
+import { FinishedModalComponent } from './finished-modal/finished-modal.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { FinishedElementComponent } from './finished-element/finished-element.co
     IonicModule,
     FinishedPageRoutingModule
   ],
-  declarations: [FinishedPage, FinishedElementComponent]
+  declarations: [FinishedPage, FinishedElementComponent, FinishedModalComponent],
+  entryComponents: [FinishedModalComponent]
 })
 export class FinishedPageModule {}

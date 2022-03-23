@@ -8,6 +8,7 @@ import { InProgressPageRoutingModule } from './in-progress-routing.module';
 
 import { InProgressPage } from './in-progress.page';
 import { InProgressElementComponent } from './in-progress-element/in-progress-element.component';
+import { InProgressModalComponent } from './in-progress-modal/in-progress-modal.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { InProgressElementComponent } from './in-progress-element/in-progress-el
     IonicModule,
     InProgressPageRoutingModule
   ],
-  declarations: [InProgressPage, InProgressElementComponent]
+  declarations: [InProgressPage, InProgressElementComponent, InProgressModalComponent],
+  entryComponents: [InProgressModalComponent]
 })
 export class InProgressPageModule {}
