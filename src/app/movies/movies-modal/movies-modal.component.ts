@@ -24,14 +24,16 @@ export class MoviesModalComponent implements OnInit {
       return;
     }
 
-    this.modalCtrl.dismiss({
+    this.modalCtrl.dismiss(
+     {
       movieData:
       {
-        name: this.form.value['name'],
-        rating: this.form.value['rating'],
-        comment: this.form.value['comment'],
+        name: this.form.value.name,
+        rating: this.form.value.rating,
+         comment: this.form.value.comment,
+         imageUrl: this.form.value.comment
       }
-    }, 'confirm');
+    },'confirm');
   }
 
 }

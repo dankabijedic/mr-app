@@ -40,13 +40,22 @@
       </ion-row>
 
       <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Image</ion-label>
+            <ion-textarea type="url" ngModel name="image"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
         <ion-col>
           <ion-button type="Submit" color="primary" expand="block" [disabled]="f.invalid">
             Save
           </ion-button>
         </ion-col>
       </ion-row>
-      
+
     </ion-grid>
   </form>
 </ion-content>

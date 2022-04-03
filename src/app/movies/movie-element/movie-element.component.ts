@@ -7,7 +7,7 @@ import { Movie } from '../movie.model';
   styleUrls: ['./movie-element.component.scss'],
 })
 export class MovieElementComponent implements OnInit {
-  @Input() movie: Movie = {id: 'q3', name: 'Neki', rating: '8', comment: 'Neki kom', imageUrl: ''};
+  @Input() movie: Movie = {id: 'q3', name: 'Neki', rating: 8, comment: 'Neki kom', imageUrl: ''};
 
   constructor() { }
 

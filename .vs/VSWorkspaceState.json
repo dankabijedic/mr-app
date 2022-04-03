@@ -3,13 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\auth",
+    "\\src\\app\\auth\\register",
     "\\src\\app\\movies",
+    "\\src\\app\\movies\\movie-element",
     "\\src\\app\\movies\\movies-modal",
     "\\src\\app\\tv-shows",
-    "\\src\\app\\tv-shows\\finished",
-    "\\src\\app\\tv-shows\\in-progress",
-    "\\src\\app\\tv-shows\\in-progress\\in-progress-modal"
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\movies\\movies-routing.module.ts",
+  "SelectedNode": "\\src\\app\\auth\\register\\register.page.ts",
   "PreviewInSolutionExplorer": false
 }

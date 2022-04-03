@@ -1,7 +1,7 @@
 export interface Movie {
   id: string;
   name: string;
-  rating: string;
+  rating: number;
   comment: string;
   imageUrl: string;
 }
